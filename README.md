@@ -17,13 +17,13 @@ describe("Should pass", () => {
     "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
   });
   it("for fourth row led", () => {
-    Test.assertSimilar(berlinClock("00:00:01"), 
+    Test.assertSimilar(berlinClock("00:01:01"), 
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYOOO");
-    Test.assertSimilar(berlinClock("00:00:02"), 
+    Test.assertSimilar(berlinClock("00:02:02"), 
     "O\nOOOO\nOOOO\nOOOOOOOOOOO\nYYOO");
-    Test.assertSimilar(berlinClock("00:00:03"), 
+    Test.assertSimilar(berlinClock("00:03:03"), 
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYO");
-    Test.assertSimilar(berlinClock("00:00:04"), 
+    Test.assertSimilar(berlinClock("00:04:04"), 
     "O\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYY");
   });
   it("for third row led", () => {

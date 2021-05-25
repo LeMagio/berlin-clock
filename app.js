@@ -6,12 +6,12 @@ function berlinClock(time) {
     let hoursByFive = Number.parseInt(hours / 5);
     let hoursUnit = hours % 5;
 
-    let secondsOdd = seconds % 2 == 0 ? 'O' : 'Y';
+    let minuteIsEven = minutes % 2 == 0 ? 'O' : 'Y';
 
     let firstRow = Array(hoursByFive).fill('R').join('').padEnd(4, 'O');
     let secondRow = Array(hoursUnit).fill('R').join('').padEnd(4, 'O');
 
-    let formatClock = [secondsOdd, firstRow, secondRow, 'OOOOOOOOOOO', 'OOOO'].join('\n');
+    let formatClock = [minuteIsEven, firstRow, secondRow, 'OOOOOOOOOOO', 'OOOO'].join('\n');
 
     return formatClock;
 }
