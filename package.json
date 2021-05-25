@@ -1,0 +1,31 @@
+{
+  "name": "berlin-clock",
+  "version": "1.0.0",
+  "description": "Berlin clock implementation using node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeMagio/berlin-clock.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "berlin",
+    "clock",
+    "tdd",
+    "jest"
+  ],
+  "author": "José Luis Muñoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeMagio/berlin-clock/issues"
+  },
+  "homepage": "https://github.com/LeMagio/berlin-clock#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.1"
+  }
+}
