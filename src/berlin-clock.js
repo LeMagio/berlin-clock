@@ -26,3 +26,5 @@ function berlinClock(time) {
 
     return formatClock;
 }
+
+module.exports = berlinClock;
