@@ -64,7 +64,7 @@ describe("Should pass", () => {
   });
   it("for valid value", () => {
     Test.assertSimilar(berlinClock("12:56:01"), 
-    "Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO");
+    "O\nRROO\nRROO\nYYRYYRYYRYY\nYOOO");
   });
 });
 
