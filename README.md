@@ -3,9 +3,9 @@
 
 Possibles Scenarios to Test:
 - Test empty strings, null or undefined. ☑️
+- Test for letters and special characters. ☑️
 - Validate input string format HH:MM:SS.
 - Test more number major of 23, 59, 59 and negative numbers.
-- Test for letters and special characters.
 - Test for correct number of leds depending of input.
 
 ## Test suite Jest

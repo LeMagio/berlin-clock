@@ -15,4 +15,11 @@ describe("Should fail", () => {
         expect(berlinClock(undefined)).toBe(
             "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     });
+
+    it("when it's not supported string", () => {
+        expect(berlinClock("INVALID")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("OO:OO:OO")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    });
 });
