@@ -14,57 +14,57 @@ Possibles Scenarios to Test:
 describe("Should pass", () => {
   it("for default minimum value", () => {
     Test.assertSimilar(berlinClock("00:00:00"), 
-    "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
   });
   it("for fourth row led", () => {
-    Test.assertSimilar(berlinClock("00:01:00"), 
+    Test.assertSimilar(berlinClock("00:00:01"), 
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYOOO");
-    Test.assertSimilar(berlinClock("00:02:00"), 
+    Test.assertSimilar(berlinClock("00:00:02"), 
     "O\nOOOO\nOOOO\nOOOOOOOOOOO\nYYOO");
-    Test.assertSimilar(berlinClock("00:03:00"), 
+    Test.assertSimilar(berlinClock("00:00:03"), 
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYO");
-    Test.assertSimilar(berlinClock("00:04:00"), 
+    Test.assertSimilar(berlinClock("00:00:04"), 
     "O\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYY");
   });
   it("for third row led", () => {
     Test.assertSimilar(berlinClock("00:05:00"), 
-    "Y\nOOOO\nOOOO\nYOOOOOOOOOO\nOOOO");
+    "O\nOOOO\nOOOO\nYOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:10:00"), 
-    "Y\nOOOO\nOOOO\nYYOOOOOOOOO\nOOOO");
+    "O\nOOOO\nOOOO\nYYOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:15:00"), 
-    "Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO");
+    "O\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:20:00"), 
-    "Y\nOOOO\nOOOO\nYYRYOOOOOOO\nOOOO");
+    "O\nOOOO\nOOOO\nYYRYOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:55:00"), 
-    "Y\nOOOO\nOOOO\nYYRYYRYYRYY\nOOOO");
+    "O\nOOOO\nOOOO\nYYRYYRYYRYY\nOOOO");
   });
   it("for second row led", () => {
     Test.assertSimilar(berlinClock("01:00:00"), 
-    "Y\nOOOO\nROOO\nOOOOOOOOOOO\nOOOO");
+    "O\nOOOO\nROOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("02:00:00"), 
-    "Y\nOOOO\nRROO\nOOOOOOOOOOO\nOOOO");
+    "O\nOOOO\nRROO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("03:00:00"), 
-    "Y\nOOOO\nRRRO\nOOOOOOOOOOO\nOOOO");
+    "O\nOOOO\nRRRO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("04:00:00"), 
-    "Y\nOOOO\nRRRR\nOOOOOOOOOOO\nOOOO");
+    "O\nOOOO\nRRRR\nOOOOOOOOOOO\nOOOO");
   });
   it("for first row led", () => {
     Test.assertSimilar(berlinClock("05:00:00"), 
-    "Y\nROOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "O\nROOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("10:00:00"), 
-    "Y\nRROO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "O\nRROO\nOOOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("15:00:00"), 
-    "Y\nRRRO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "O\nRRRO\nOOOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("20:00:00"), 
-    "Y\nRRRR\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "O\nRRRR\nOOOO\nOOOOOOOOOOO\nOOOO");
   });
   it("for default maximum value", () => {
     Test.assertSimilar(berlinClock("23:59:59"), 
-    "Y\nRRRR\nRRRR\nYYRYYRYYRYY\nYYYY");
+    "Y\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY");
   });
   it("for valid value", () => {
     Test.assertSimilar(berlinClock("12:56:01"), 
-    "O\nRROO\nRROO\nYYRYYRYYRYY\nYOOO");
+    "Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO");
   });
 });
 
