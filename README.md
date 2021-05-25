@@ -2,9 +2,9 @@
 ## JS URL https://www.codewars.com/kata/5a1463678ba9145a670000f9/train/javascript
 
 Possibles Scenarios to Test:
+- Test empty strings, null or undefined. ☑️
 - Validate input string format HH:MM:SS.
 - Test more number major of 23, 59, 59 and negative numbers.
-- Test empty strings, null or undefined.
 - Test for letters and special characters.
 - Test for correct number of leds depending of input.
 
