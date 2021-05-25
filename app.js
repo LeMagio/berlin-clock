@@ -8,7 +8,7 @@ function berlinClock(time) {
     let minutesByFive = Number.parseInt(minutes / 5);
     let minuteUnits = minutes % 5;
 
-    let minuteIsEven = minutes % 2 == 0 ? 'O' : 'Y';
+    let secondsIsEven = seconds % 2 == 0 ? 'Y' : 'O';
 
     let firstRow = Array(hoursByFive).fill('R').join('').padEnd(4, 'O');
     let secondRow = Array(hoursUnit).fill('R').join('').padEnd(4, 'O');
@@ -22,7 +22,7 @@ function berlinClock(time) {
     let thirdRow = bufferThirdRow.join('').padEnd(11, 'O');
     let fourthRow = Array(minuteUnits).fill('Y').join('').padEnd(4, 'O');
 
-    let formatClock = [minuteIsEven, firstRow, secondRow, thirdRow, fourthRow].join('\n');
+    let formatClock = [secondsIsEven, firstRow, secondRow, thirdRow, fourthRow].join('\n');
 
     return formatClock;
 }

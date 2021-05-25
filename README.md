@@ -14,7 +14,7 @@ Possibles Scenarios to Test:
 describe("Should pass", () => {
   it("for default minimum value", () => {
     Test.assertSimilar(berlinClock("00:00:00"), 
-    "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
   });
   it("for fourth row led", () => {
     Test.assertSimilar(berlinClock("00:01:01"), 
