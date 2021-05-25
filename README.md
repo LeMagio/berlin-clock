@@ -6,7 +6,7 @@ Possibles Scenarios to Test:
 - Test for letters and special characters. ☑️
 - Validate input string format HH:MM:SS. ☑️
 - Test more number major of 23, 59, 59 and negative numbers. ☑️
-- Test for correct number of leds depending of input.
+- Test for correct number of leds depending of input. ☑️
 
 ## Test suite Jest
 ```js
@@ -17,50 +17,50 @@ describe("Should pass", () => {
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
   });
   it("for fourth row led", () => {
-    Test.assertSimilar(berlinClock("00:01:01"), 
+    Test.assertSimilar(berlinClock("00:01:00"), 
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYOOO");
-    Test.assertSimilar(berlinClock("00:02:02"), 
-    "O\nOOOO\nOOOO\nOOOOOOOOOOO\nYYOO");
-    Test.assertSimilar(berlinClock("00:03:03"), 
+    Test.assertSimilar(berlinClock("00:02:00"), 
+    "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYYOO");
+    Test.assertSimilar(berlinClock("00:03:00"), 
     "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYO");
-    Test.assertSimilar(berlinClock("00:04:04"), 
-    "O\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYY");
+    Test.assertSimilar(berlinClock("00:04:00"), 
+    "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nYYYY");
   });
   it("for third row led", () => {
     Test.assertSimilar(berlinClock("00:05:00"), 
     "Y\nOOOO\nOOOO\nYOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:10:00"), 
-    "O\nOOOO\nOOOO\nYYOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nOOOO\nYYOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:15:00"), 
     "Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:20:00"), 
-    "O\nOOOO\nOOOO\nYYRYOOOOOOO\nOOOO");
+    "Y\nOOOO\nOOOO\nYYRYOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:55:00"), 
     "Y\nOOOO\nOOOO\nYYRYYRYYRYY\nOOOO");
   });
   it("for second row led", () => {
     Test.assertSimilar(berlinClock("01:00:00"), 
-    "O\nOOOO\nROOO\nOOOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nROOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("02:00:00"), 
-    "O\nOOOO\nRROO\nOOOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nRROO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("03:00:00"), 
-    "O\nOOOO\nRRRO\nOOOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nRRRO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("04:00:00"), 
-    "O\nOOOO\nRRRR\nOOOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nRRRR\nOOOOOOOOOOO\nOOOO");
   });
   it("for first row led", () => {
     Test.assertSimilar(berlinClock("05:00:00"), 
-    "O\nROOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "Y\nROOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("10:00:00"), 
-    "O\nRROO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "Y\nRROO\nOOOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("15:00:00"), 
-    "O\nRRRO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "Y\nRRRO\nOOOO\nOOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("20:00:00"), 
-    "O\nRRRR\nOOOO\nOOOOOOOOOOO\nOOOO");
+    "Y\nRRRR\nOOOO\nOOOOOOOOOOO\nOOOO");
   });
   it("for default maximum value", () => {
     Test.assertSimilar(berlinClock("23:59:59"), 
-    "Y\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY");
+    "O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY");
   });
   it("for valid value", () => {
     Test.assertSimilar(berlinClock("12:56:01"), 
