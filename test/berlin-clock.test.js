@@ -39,4 +39,19 @@ describe("Should fail", () => {
         expect(berlinClock("0:0:0")).toBe(
             "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     });
+
+    it("when hours it's bigger than 23 hours", () => {
+        expect(berlinClock("24:00:00")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    });
+
+    it("when minutes it's bigger than 59 minutes", () => {
+        expect(berlinClock("23:60:00")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    });
+    
+    it("when seconds it's bigger than 59 seconds", () => {
+        expect(berlinClock("23:00:60")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    });
 });
