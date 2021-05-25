@@ -22,4 +22,21 @@ describe("Should fail", () => {
         expect(berlinClock("OO:OO:OO")).toBe(
             "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     });
+
+    it("when it's and not correct format string", () => {
+        expect(berlinClock("12:00")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("::")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("23:00.00")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("3:00:00")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("12:1:00")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("00:00:1")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+        expect(berlinClock("0:0:0")).toBe(
+            "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
+    });
 });
