@@ -28,15 +28,15 @@ describe("Should pass", () => {
   });
   it("for third row led", () => {
     Test.assertSimilar(berlinClock("00:05:00"), 
-    "O\nOOOO\nOOOO\nYOOOOOOOOOO\nOOOO");
+    "Y\nOOOO\nOOOO\nYOOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:10:00"), 
     "O\nOOOO\nOOOO\nYYOOOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:15:00"), 
-    "O\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO");
+    "Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:20:00"), 
     "O\nOOOO\nOOOO\nYYRYOOOOOOO\nOOOO");
     Test.assertSimilar(berlinClock("00:55:00"), 
-    "O\nOOOO\nOOOO\nYYRYYRYYRYY\nOOOO");
+    "Y\nOOOO\nOOOO\nYYRYYRYYRYY\nOOOO");
   });
   it("for second row led", () => {
     Test.assertSimilar(berlinClock("01:00:00"), 
