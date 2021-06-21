@@ -26,8 +26,8 @@ function getThirdRow(minutes){
     minutes = Number.parseInt(minutes / 5);
     let bufferThirdRow = new Array(11).fill('Y',0,minutes).fill('O',minutes,11); 
     bufferThirdRow[2] = bufferThirdRow[2] == 'Y' ? 'R' : 'O';
-    bufferThirdRow[5] = bufferThirdRow[5] === 'Y' ? 'R' : 'O';
-    bufferThirdRow[8] = bufferThirdRow[8] === 'Y' ? 'R' : 'O';    
+    bufferThirdRow[5] = bufferThirdRow[5] == 'Y' ? 'R' : 'O';
+    bufferThirdRow[8] = bufferThirdRow[8] == 'Y' ? 'R' : 'O';    
     return bufferThirdRow.join('');
 }
 
