@@ -1,12 +1,13 @@
-const defaultTime = "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO";
+const DEFAULT_VALUE = "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO";
+const VALID_FORMAT_TIME_REGEXP=/^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$/;
 
 function berlinClock(timeString) {
-    if(!isValidTime(timeString)){ return defaultTime;}
+    if(!isValidTime(timeString)){ return DEFAULT_VALUE;}
     return getBerlinClockString(getTimeArray(timeString));    
 }
 
 function isValidTime(timeString){
- return !(!timeString || timeString.trim().length == 0 || !timeString.match(/^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$/));
+ return !(!timeString || timeString.trim().length == 0 || !timeString.match(VALID_FORMAT_TIME_REGEXP));
 }
 
 function getTimeArray(timeString){
