@@ -3,6 +3,8 @@ const VALID_FORMAT_TIME_REGEXP = /^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$
 const RED_LED = 'R';
 const YELLOW_LED = 'Y'
 const OFF_LED = 'O';
+const HOUR_SEPARATOR = ':';
+const EMPTY_CHAR = '';
 
 function berlinClock(timeString) {
     if (!isValidTime(timeString)) { return DEFAULT_VALUE; }
@@ -14,16 +16,16 @@ function isValidTime(timeString) {
 }
 
 function getTimeArray(timeString) {
-    let time = timeString.split(':');
+    let time = timeString.split(HOUR_SEPARATOR);
     return { hours: time[0], minutes: time[1], seconds: time[2] };
 }
 
 function getFirstRow(hours) {
-    return Array(Number.parseInt(hours / 5)).fill(RED_LED).join('').padEnd(4, OFF_LED);
+    return Array(Number.parseInt(hours / 5)).fill(RED_LED).join(EMPTY_CHAR).padEnd(4, OFF_LED);
 }
 
 function getSecondRow(hours) {
-    return Array(hours % 5).fill(RED_LED).join('').padEnd(4, OFF_LED);
+    return Array(hours % 5).fill(RED_LED).join(EMPTY_CHAR).padEnd(4, OFF_LED);
 }
 
 function getThirdRow(minutes) {
@@ -32,11 +34,11 @@ function getThirdRow(minutes) {
     bufferThirdRow[2] = bufferThirdRow[2] == YELLOW_LED ? RED_LED : OFF_LED;
     bufferThirdRow[5] = bufferThirdRow[5] == YELLOW_LED ? RED_LED : OFF_LED;
     bufferThirdRow[8] = bufferThirdRow[8] == YELLOW_LED ? RED_LED : OFF_LED;
-    return bufferThirdRow.join('');
+    return bufferThirdRow.join(EMPTY_CHAR);
 }
 
 function getFourthRow(minutes) {
-    return Array(minutes % 5).fill(YELLOW_LED).join('').padEnd(4, OFF_LED);
+    return Array(minutes % 5).fill(YELLOW_LED).join(EMPTY_CHAR).padEnd(4, OFF_LED);
 }
 
 function getEvenLedFromSeconds(seconds) {
