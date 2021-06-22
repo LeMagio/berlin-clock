@@ -97,7 +97,13 @@ function getEvenLedFromSeconds(seconds) {
  * @returns string
  */
 function getBerlinClockString(time) {
-    return [getEvenLedFromSeconds(time.seconds), getFirstRow(time.hours), getSecondRow(time.hours), getThirdRow(time.minutes), getFourthRow(time.minutes)].join('\n');
+    return [
+        getEvenLedFromSeconds(time.seconds),
+        getFirstRow(time.hours),
+        getSecondRow(time.hours),
+        getThirdRow(time.minutes),
+        getFourthRow(time.minutes)
+    ].join('\n');
 }
 
 module.exports = berlinClock;
