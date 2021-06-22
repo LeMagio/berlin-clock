@@ -1,30 +1,46 @@
-function berlinClock(time) {
-    if (!time || time.trim().length == 0 || !time.match(/^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$/))
-        return "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO";
-    let { 0: hours, 1: minutes, 2: seconds } = time.split(':');
+const defaultTime = "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO";
 
-    let hoursByFive = Number.parseInt(hours / 5);
-    let hoursUnit = hours % 5;
-    let minutesByFive = Number.parseInt(minutes / 5);
-    let minuteUnits = minutes % 5;
+function berlinClock(timeString) {
+    if(!isValidTime(timeString)){ return defaultTime;}
+    return getBerlinClockString(getTimeArray(timeString));    
+}
 
-    let secondsIsEven = seconds % 2 == 0 ? 'Y' : 'O';
+function isValidTime(timeString){
+ return !(!timeString || timeString.trim().length == 0 || !timeString.match(/^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$/));
+}
 
-    let firstRow = Array(hoursByFive).fill('R').join('').padEnd(4, 'O');
-    let secondRow = Array(hoursUnit).fill('R').join('').padEnd(4, 'O');
-    let bufferThirdRow = Array(minutesByFive).fill('Y');
-    if (bufferThirdRow.length > 2)
-        bufferThirdRow[2] = 'R';
-    if (bufferThirdRow.length > 5)
-        bufferThirdRow[5] = 'R';
-    if (bufferThirdRow.length > 8)
-        bufferThirdRow[8] = 'R';
-    let thirdRow = bufferThirdRow.join('').padEnd(11, 'O');
-    let fourthRow = Array(minuteUnits).fill('Y').join('').padEnd(4, 'O');
+function getTimeArray(timeString){
+  let time = timeString.split(':');
+  return {hours : time[0], minutes : time[1], seconds : time[2]};  
+}
 
-    let formatClock = [secondsIsEven, firstRow, secondRow, thirdRow, fourthRow].join('\n');
+function getFirstRow(hours){
+   return Array(Number.parseInt(hours / 5)).fill('R').join('').padEnd(4, 'O');
+}
 
-    return formatClock;
+function getSecondRow(hours){
+    return Array(hours % 5).fill('R').join('').padEnd(4, 'O');
+}
+
+function getThirdRow(minutes){
+    minutes = Number.parseInt(minutes / 5);
+    let bufferThirdRow = new Array(11).fill('Y',0,minutes).fill('O',minutes,11); 
+    bufferThirdRow[2] = bufferThirdRow[2] == 'Y' ? 'R' : 'O';
+    bufferThirdRow[5] = bufferThirdRow[5] == 'Y' ? 'R' : 'O';
+    bufferThirdRow[8] = bufferThirdRow[8] == 'Y' ? 'R' : 'O';    
+    return bufferThirdRow.join('');
+}
+
+function getFourthRow(minutes){
+    return Array(minutes % 5).fill('Y').join('').padEnd(4, 'O');
+}
+
+function getWatchSecond(seconds){
+    return seconds % 2 == 0 ? 'Y' : 'O';
+}
+
+function getBerlinClockString(time){
+  return [getWatchSecond(time.seconds), getFirstRow(time.hours), getSecondRow(time.hours), getThirdRow(time.minutes), getFourthRow(time.minutes)].join('\n');
 }
 
 module.exports = berlinClock;
